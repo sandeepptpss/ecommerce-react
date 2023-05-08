@@ -6,7 +6,15 @@
   height: 40vmin;
   pointer-events: none;
 }
+.me-auto.nav_bar-wrapper.navbar-nav a {
+  padding-left: 30px;
+  text-decoration: none;
+}
 
+form.main-login-form input {
+  padding: 11px;
+  width: 450px;
+}
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
