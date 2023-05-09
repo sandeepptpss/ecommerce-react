@@ -14,10 +14,7 @@ const Login=()=>{
      <Header />
     
         <div className="container center">
-        <div className="login-page col-ms-1 offset-sm-4">
-            <h2>Login</h2>
-            
-        </div>
+
         </div>
         </>
     )
