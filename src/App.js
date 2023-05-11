@@ -8,7 +8,7 @@ import UpdateProduct from './UpdateProduct';
 import Login  from './Login';
 import Register from './Register';
 import NoPage from './components/pages/NoPage';
-import Protected from './Protected'
+import Profile from './Profile';
 function App() {
   return (
     <div className="App">
@@ -16,6 +16,7 @@ function App() {
 
       <Routes>
       <Route path="/add" element={<AddProduct />} />
+      <Route path="/profile" element={<Profile/>}/>
       <Route path="/" element={<Home/>}/>
       <Route path="/update" element={<UpdateProduct/>} />
       <Route path="/login" element={<Login />} />

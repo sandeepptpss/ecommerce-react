@@ -15,6 +15,17 @@ form.main-login-form input {
   padding: 11px;
   width: 450px;
 }
+.main-register-page.center {
+  width: 600px;
+  margin-left: 574PX;
+}
+table, th, td {
+  border: 1px solid black !important;
+}
+table{
+  width:100%
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
