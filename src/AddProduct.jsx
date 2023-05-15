@@ -35,7 +35,7 @@ return(
             <br></br>
             <input type="text"  value={description} onChange={(e)=>setDescription(e.target.value)} className="form-control" placeholder="Enter Description"></input>
             <br></br>
-            <input type="file" value={image} onChange={(e)=> setImage("image", e.target.images[0])}  name="image" placeholder="Choose image form-control"></input>
+            <input type="file" value={image} onChange={(e)=> setImage(e.target.vlaue)}  name="image" placeholder="Choose image form-control"></input>
             <br></br>
             <button type="submit" onClick={addProduct} className="btn btn-primary">Add Product</button>
         </div>
