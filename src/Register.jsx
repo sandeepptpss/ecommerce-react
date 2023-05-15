@@ -6,7 +6,7 @@ const Register = () => {
 
     useEffect(() => {
         if (localStorage.getItem('user-info')) {
-            navigate('/add');
+            navigate('/');
         }
     }, [])
     const navigate = useNavigate();
@@ -24,9 +24,9 @@ const Register = () => {
             body: JSON.stringify(item)
         });
         result = await result.json();
-        console.warn(result);
+     
         localStorage.setItem('user-info', JSON.stringify(result));
-        navigate('/add')
+        navigate('/login')
     }
     return (
         <>

@@ -1,9 +1,9 @@
 import React ,{useState, useEffect} from "react";
 import Header from "./Header";
- 
+
+
 const Profile =()=>{
   const [users, setUsers] = useState([])
-
   const fetchUserData = () => {
     fetch("http://127.0.0.1:8000/api/profile/")
       .then(response => {
@@ -13,7 +13,6 @@ const Profile =()=>{
         setUsers(data)
       })
   }
-
 useEffect(()=>{
   fetchUserData();
 },[]);
@@ -39,11 +38,8 @@ useEffect(()=>{
           })
           }
  </table>
-
-
-      </div>
-      </>
-     
+  </div>
+</>
     );
  }
 export default Profile;
