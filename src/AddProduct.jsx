@@ -1,12 +1,15 @@
 import Header from "./Header";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 const Product = () => {
+    const navigate = useNavigate();
   const [title, setTitle] = useState("");
   const [price, setPrice] = useState("");
   const [description, setDescription] = useState("");
   const [image, setImage] = useState(null); 
+
   async function addProduct() {
-    try {
+    
       let formData = new FormData();
       formData.append("title", title);
       formData.append("price", price);
@@ -17,14 +20,11 @@ const Product = () => {
         method: "POST",
         body: formData,
       });
-  
       result = await result.json();
-      console.warn(result);
-    } catch (error) {
-      console.error(error);
-    }
+      localStorage.getItem('user-info', JSON.stringify(result));
+      navigate('/');
   }
-  
+
   return (
     <>
       <Header />
@@ -32,13 +32,7 @@ const Product = () => {
         <div className="main-register-page  center">
           <div className="register-page col-ms-1  col-ms-1 ">
             <h2>Add Product Details</h2>
-            <input
-              type="text"
-              value={title}
-              onChange={(e) => setTitle(e.target.value)}
-              className="form-control"
-              placeholder="Enter Title"
-            />
+            <input type="text" value={title}  onChange={(e) => setTitle(e.target.value)}  className="form-control"  placeholder="Enter Title" />
             <br />
             <input
               type="text"
@@ -62,7 +56,7 @@ const Product = () => {
               name="image"
               className="form-control"
             />
-            <br />
+            <br/>
             <button type="submit" onClick={addProduct} className="btn btn-primary">
               Add Product
             </button>

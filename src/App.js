@@ -1,14 +1,15 @@
 import './App.css';
 import React from 'react';
-import { Button } from 'react-bootstrap';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Home from './components/pages/Home';
+import Home from './Home';
 import AddProduct from './AddProduct';
 import UpdateProduct from './UpdateProduct';
 import Login  from './Login';
 import Register from './Register';
 import NoPage from './components/pages/NoPage';
 import Profile from './Profile';
+import Collection from './Collection';
+import ProductDetail from './ProductDetail';
 function App() {
   return (
     <div className="App">
@@ -22,6 +23,8 @@ function App() {
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register/>} />
       <Route path="*" element={<NoPage />} />
+      <Route path="/collections" element={<Collection/>}/>
+      <Route path="/products" element={<ProductDetail/>}/>
 
       </Routes>
     </BrowserRouter>

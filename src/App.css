@@ -46,7 +46,43 @@ table{
 .App-link {
   color: #61dafb;
 }
+img.banner-img {
+  width: 100%;
+}
+span.product-price {
+  color: red;
+  font-weight: 400;
+}
 
+.main-inner h4 {
+  font-size: 17px;
+}
+.main-inner.col-sm-3 {
+  border: 1px solid #000;
+}
+
+img.product-item-image {
+  width: 274px;
+  height: 250px;
+  
+}
+button.btn.btn-primary {
+  width: 200px;
+  height: 58px;
+}
+.main-inner.col-sm-3 {
+  margin: 12px;
+}
+.main-inner p {
+  font-size: 14px;
+  margin-left: 0;
+  margin-right: 0;
+  text-align: center;
+  justify-content: center;
+}
+.main-inner.col-sm-3 {
+  margin-bottom: 57px;
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

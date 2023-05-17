@@ -30,15 +30,15 @@ const Register = () => {
     }
     return (
         <>
-            <Header />
+        <Header/>
             <div className="main-register-page  center">
                 <div className="register-page col-ms-1  col-ms-1 ">
                     <h2>User Sign Up</h2>
-                    <input type="text" value={name} onChange={(e) => setName(e.target.value)} className="form-control" placeholder="Enter Name"></input>
+                    <input type="text" value={name} onChange={(e) => setName(e.target.value)} className="form-control" placeholder="Enter Name" />
                     <br></br>
-                    <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} className="form-control" placeholder="Enter email"></input>
+                    <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} className="form-control" placeholder="Enter email" />
                     <br></br>
-                    <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} className="form-control" placeholder="Enter Password"></input>
+                    <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} className="form-control" placeholder="Enter Password"/>
                     <br></br>
                     <button type="submit" onClick={SignUp} className="btn btn-primary">Sign in</button>
                     <br></br>

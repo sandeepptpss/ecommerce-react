@@ -1,13 +1,11 @@
 import { Navbar, Nav, Container, NavDropdown } from 'react-bootstrap';
 import { Link, useNavigate } from "react-router-dom";
-
 const Header = () => {
-
   const user = JSON.parse(localStorage.getItem('user-info'));
   const navigate = useNavigate();
   const Logout = () => {
     localStorage.clear();
-    navigate('/register');
+    navigate('/login');
   };
 
   const Profile = () => {
@@ -25,6 +23,7 @@ const Header = () => {
                 <>
                   <Link to="/addproduct">Add Product</Link>
                   <Link to="/update">Update Product</Link>
+                  <Link to="/collections">Shop</Link>
                 </>
                 :
                 <>
