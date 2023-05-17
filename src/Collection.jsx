@@ -22,10 +22,10 @@ const Collection = () => {
              <img className="product-item-image"  src={"http://127.0.0.1:8000/upload/"+item.image} alt="image"/>
               <h4>{item.title}</h4>
               <span className="product-price">${item.price}</span>
-        
-              <p className="product-description">{item.description}</p>
-              <Link to="products/"$id></Link>
+              <p className="product-description">{item.description.slice(0, 50)}…</p>
+              <Link target={"_blank"} to={"products" + item.id}>
               <button className="btn btn-primary">Add to cart<br></br>${item.price}</button>
+              </Link>
             </div>
           ))}
         </div>
