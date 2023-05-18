@@ -10,7 +10,6 @@
   padding-left: 30px;
   text-decoration: none;
 }
-
 form.main-login-form input {
   padding: 11px;
   width: 450px;
@@ -25,13 +24,11 @@ table, th, td {
 table{
   width:100%
 }
-
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
 }
-
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -66,11 +63,13 @@ img.product-item-image {
   height: 250px;
   
 }
-
+span.errer {
+  color: red;
+}
 button.btn.btn-primary {
   width: 272px;
-  margin-top: 15px;
-  height: 52px;
+  margin-top: 12px;
+  height: 57px;
 }
 .main-inner.col-sm-3 {
   margin: 12px;
@@ -85,15 +84,14 @@ button.btn.btn-primary {
 .main-inner.col-sm-3 {
   margin-bottom: 57px;
 }
+.main-product-detail img {
+  width: 100%;
+}
+.main-inner-side {
+  margin-left: 396px;
+  display: flex;
+}
 
-.main-inner-side {
-  margin-left: 613px;
-  display: flex;
-}
-.main-inner-side {
-  margin-left: 613px;
-  display: flex;
-}
 .right-side-data {
   margin: 59px;
 }
@@ -105,6 +103,14 @@ button.btn.btn-primary {
 }
 p.product-description {
   color: #000;
+}
+p.product-description {
+  max-width: 80%;
+  margin-left: 169px;
+}
+.right-side-data p {
+  color: red;
+  font-size: 23px;
 }
 @keyframes App-logo-spin {
   from {

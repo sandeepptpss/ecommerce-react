@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Header from "./Header";
-const Collection =()=> {
+
+const Collection =() => {
   const [data, setData] = useState([]);
   const fetchData = async () => {
       const response = await fetch(`http://127.0.0.1:8000/api/collection/`);
@@ -23,7 +24,7 @@ const Collection =()=> {
               <img className="product-item-image" src={"http://127.0.0.1:8000/upload/" + item.image} alt="image" />
               <h4>{item.title}</h4>
               <span className="product-price">${item.price}</span>
-              <p className="product-description">{item.description.slice(0, 50)}…</p>
+              <p className="product-description-collection">{item.description.slice(0, 50)}…</p>
             </Link>
             </div>
           ))}
@@ -32,5 +33,4 @@ const Collection =()=> {
     </>
   );
 };
-
 export default Collection;

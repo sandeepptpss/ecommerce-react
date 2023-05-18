@@ -1,11 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, {createContext, useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import Header from "./Header";
 const ProductDetail = () => {
   const [details, setDetails] = useState([]);
   const [data, setData] = useState([]);
 const {id}=useParams()
-console.log(id);
   const fetchData = async () => {
       const response = await fetch(`http://127.0.0.1:8000/api/detail/${id}`);
       console.log("response",response)
@@ -33,13 +32,13 @@ console.log(id);
             <img src={`http://127.0.0.1:8000/upload/${details.image}`} width="500px" height="450px" alt="Product" />
           </div>
           <div className="right-side-data">
-            <span>{details.title}</span>
+            <h2>{details.title}</h2>
             <p>${details.price}</p>
             <div className="btn-group" role="group">
               <input type="number" min="1" defaultValue="1" className="form-control" />
             </div>
-            <br />
-            <button className="btn btn-primary">Add to cart<b/>${details.price}</button>
+            <br></br>
+            <button className="btn btn-primary">Add to cart<br></br>${details.price}</button>
           </div>
         </div>
         <h2>Product Description</h2>

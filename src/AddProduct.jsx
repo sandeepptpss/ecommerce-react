@@ -2,12 +2,24 @@ import Header from "./Header";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 const Product = () => {
-    const navigate = useNavigate();
+  const navigate = useNavigate();
   const [title, setTitle] = useState("");
   const [price, setPrice] = useState("");
   const [description, setDescription] = useState("");
   const [image, setImage] = useState(null); 
+
+  const [errors, setErrors] = useState({});
+
+  const validateForm =()=>{
+    const newErrors = {};
+    if (!title) {
+    newErrors.title = "Title is required";
+    }
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+}
   async function addProduct() {
+    if (validateForm()) {
       let formData = new FormData();
       formData.append("title", title);
       formData.append("price", price);
@@ -22,6 +34,7 @@ const Product = () => {
       localStorage.getItem('user-info', JSON.stringify(result));
       navigate('/collections');
   }
+}
   return (
     <>
       <Header />
@@ -30,6 +43,7 @@ const Product = () => {
           <div className="register-page col-ms-1  col-ms-1 ">
             <h2>Add Product Details</h2>
             <input type="text" value={title}  onChange={(e) => setTitle(e.target.value)}  className="form-control"  placeholder="Enter Title" />
+            {errors.title && <span className="errer">{errors.title}</span>}
             <br/>
             <input
               type="text"
@@ -44,13 +58,13 @@ const Product = () => {
               onChange={(e) => setDescription(e.target.value)}
               className="form-control"
               placeholder="Enter Description"/>
-            <br/>
-            <input
+             <br/>
+             <input
               type="file"
               onChange={(e) => setImage(e.target.files[0])} 
               name="image"
               className="form-control"/>
-            <br/>
+             <br/>
             <button type="submit" onClick={addProduct} className="btn btn-primary">
               Add Product
             </button>
@@ -60,5 +74,4 @@ const Product = () => {
     </>
   );
 };
-
 export default Product;
