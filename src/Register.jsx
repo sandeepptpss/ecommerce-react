@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Header from "./Header";
 import { useNavigate, Link } from 'react-router-dom';
-
 const Register = () => {
-
     useEffect(() => {
         if (localStorage.getItem('user-info')) {
             navigate('/');
@@ -23,10 +21,9 @@ const Register = () => {
             },
             body: JSON.stringify(item)
         });
-        result = await result.json();
-     
-        localStorage.setItem('user-info', JSON.stringify(result));
-        navigate('/login')
+         result = await result.json();
+         localStorage.setItem('user-info', JSON.stringify(result));
+         navigate('/login')
     }
     return (
         <>

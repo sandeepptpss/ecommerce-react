@@ -1,7 +1,5 @@
 import React ,{useState, useEffect} from "react";
 import Header from "./Header";
-
-
 const Profile =()=>{
   const [users, setUsers] = useState([])
   const fetchUserData = () => {
@@ -27,7 +25,7 @@ useEffect(()=>{
     <th>Name</th>
     <th>Email</th>
   </tr>
-    { users.map((item)=>{
+    { users.map((item )=>{
             return (
               <tr>
               <td> {item.id}</td>

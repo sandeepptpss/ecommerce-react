@@ -1,10 +1,9 @@
 import Header from "./Header";
-
 import Banner from './image/banner.jpg';
 const Home =()=>{
     return(
         <>
-       < Header/>
+       <Header/>
        <div className="banner-image"> 
             <div className="banner-image">
                 <img src={Banner} className="banner-img" alt="banner"/>

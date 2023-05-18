@@ -7,9 +7,7 @@ const Product = () => {
   const [price, setPrice] = useState("");
   const [description, setDescription] = useState("");
   const [image, setImage] = useState(null); 
-
   async function addProduct() {
-    
       let formData = new FormData();
       formData.append("title", title);
       formData.append("price", price);
@@ -22,9 +20,8 @@ const Product = () => {
       });
       result = await result.json();
       localStorage.getItem('user-info', JSON.stringify(result));
-      navigate('/');
+      navigate('/collections');
   }
-
   return (
     <>
       <Header />
@@ -33,29 +30,26 @@ const Product = () => {
           <div className="register-page col-ms-1  col-ms-1 ">
             <h2>Add Product Details</h2>
             <input type="text" value={title}  onChange={(e) => setTitle(e.target.value)}  className="form-control"  placeholder="Enter Title" />
-            <br />
+            <br/>
             <input
               type="text"
               value={price}
               onChange={(e) => setPrice(e.target.value)}
               className="form-control"
-              placeholder="Enter price"
-            />
-            <br />
+              placeholder="Enter price"/>
+            <br/>
             <input
               type="text"
               value={description}
               onChange={(e) => setDescription(e.target.value)}
               className="form-control"
-              placeholder="Enter Description"
-            />
-            <br />
+              placeholder="Enter Description"/>
+            <br/>
             <input
               type="file"
               onChange={(e) => setImage(e.target.files[0])} 
               name="image"
-              className="form-control"
-            />
+              className="form-control"/>
             <br/>
             <button type="submit" onClick={addProduct} className="btn btn-primary">
               Add Product

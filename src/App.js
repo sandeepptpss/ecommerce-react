@@ -24,7 +24,7 @@ function App() {
       <Route path="/register" element={<Register/>} />
       <Route path="*" element={<NoPage />} />
       <Route path="/collections" element={<Collection/>}/>
-      <Route path="/products" element={<ProductDetail/>}/>
+      <Route path="/products/:id" element={<ProductDetail/>}/>
 
       </Routes>
     </BrowserRouter>

@@ -1,19 +1,51 @@
-import React from "react";
-const ProductDetail=()=>{
-    return(
-        <div className="main-product-detail">
+import React, { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
+import Header from "./Header";
+const ProductDetail = () => {
+  const [details, setDetails] = useState([]);
+  const [data, setData] = useState([]);
+const {id}=useParams()
+console.log(id);
+  const fetchData = async () => {
+      const response = await fetch(`http://127.0.0.1:8000/api/detail/${id}`);
+      console.log("response",response)
+      const result = await response.json();
+      setDetails(result);
+  };
+  useEffect(() => {
+    fetchData();
+  }, []);
+  const fetchData1 = async() => {
+      const response = await fetch(`http://127.0.0.1:8000/api/collection/`);
+      const result = await response.json();
+      setData(result);
+    };
+  useEffect(() => {
+    fetchData1();
+  }, []);
+  return (
+    <>
+      <Header />
+      <div className="main-product-detail">
         <h2>Product Page</h2>
-           <div className="left-side-data">
-            <img src="http://127.0.0.1:8000/upload/20230517104922.jpg" width="250px" height="250px"/>
-           </div>
-           <div className="right-side-data">
-           <span>$499</span>
-              <h2>Hair Growth Oil (2 Pack)</h2>
-
-              <button className="btn btn-primary">Add to cart</button>
-
-           </div>
+        <div className="main-inner-side">
+          <div className="left-side-data">
+            <img src={`http://127.0.0.1:8000/upload/${details.image}`} width="500px" height="450px" alt="Product" />
+          </div>
+          <div className="right-side-data">
+            <span>{details.title}</span>
+            <p>${details.price}</p>
+            <div className="btn-group" role="group">
+              <input type="number" min="1" defaultValue="1" className="form-control" />
+            </div>
+            <br />
+            <button className="btn btn-primary">Add to cart<b/>${details.price}</button>
+          </div>
         </div>
-    )
-}
+        <h2>Product Description</h2>
+        <p className="product-description">{details.description}</p>
+      </div>
+    </>
+  );
+};
 export default ProductDetail;
