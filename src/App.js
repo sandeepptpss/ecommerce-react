@@ -14,12 +14,11 @@ function App() {
   return (
     <div className="App">
    <BrowserRouter>
-
       <Routes>
       <Route path="/addproduct" element={<AddProduct />} />
       <Route path="/profile" element={<Profile/>}/>
       <Route path="/" element={<Home/>}/>
-      <Route path="/update" element={<UpdateProduct/>} />
+      <Route path="/update/:id" element={<UpdateProduct/>} />
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register/>} />
       <Route path="*" element={<NoPage />} />

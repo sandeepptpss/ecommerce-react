@@ -26,6 +26,7 @@ const Collection =() => {
               <span className="product-price">${item.price}</span>
               <p className="product-description-collection">{item.description.slice(0, 50)}…</p>
             </Link>
+           <Link to={`/update/${item.id}`}> <span className="btn btn-primary">Update</span></Link>
             </div>
           ))}
         </div>

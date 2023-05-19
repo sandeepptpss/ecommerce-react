@@ -1,7 +1,6 @@
 .App {
   text-align: center;
 }
-
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -24,6 +23,12 @@ table, th, td {
 table{
   width:100%
 }
+p.product-description-collection {
+  color: #000;
+}
+img.update-image {
+  width: 130px;
+}
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
@@ -39,7 +44,6 @@ table{
   font-size: calc(10px + 2vmin);
   color: white;
 }
-
 .App-link {
   color: #61dafb;
 }

@@ -7,9 +7,7 @@ const Product = () => {
   const [price, setPrice] = useState("");
   const [description, setDescription] = useState("");
   const [image, setImage] = useState(null); 
-
   const [errors, setErrors] = useState({});
-
   const validateForm =()=>{
     const newErrors = {};
     if (!title) {
@@ -25,7 +23,6 @@ const Product = () => {
       formData.append("price", price);
       formData.append("description", description);
       formData.append("image", image);
-  
       let result = await fetch("http://127.0.0.1:8000/api/addproduct", {
         method: "POST",
         body: formData,
