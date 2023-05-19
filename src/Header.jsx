@@ -30,15 +30,6 @@ return (
               </>
           }
         </Nav>
-        <div className="d-flex">
-          <input
-            type="search"
-            placeholder="Search"
-            className="me-2"
-            aria-label="Search"
-          />
-          <button variant="outline-success">Search</button>
-        </div>
         {localStorage.getItem('user-info') ?
           <Nav>
             <NavDropdown title={user && user.name}>
@@ -49,7 +40,6 @@ return (
           : null}
       </Container>
     </Navbar>
-
   </div>
 )
 }

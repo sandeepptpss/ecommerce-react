@@ -19,15 +19,16 @@ const Collection =() => {
         <h1 style={{ color: "red" }}>Shop Collections</h1>
         <div className="main-outer row">
           {data.map((item) => (
-            <div style={{ width: "18rem" }} className="main-inner col-sm-3" key={item.id}>
-              <Link target={"_blank"} to={`/products/${item.id}`}>
-              <img className="product-item-image" src={"http://127.0.0.1:8000/upload/" + item.image} alt="image" />
-              <h4>{item.title}</h4>
-              <span className="product-price">${item.price}</span>
-              <p className="product-description-collection">{item.description.slice(0, 50)}…</p>
-            </Link>
-           <Link to={`/update/${item.id}`}> <span className="btn btn-primary">Update</span></Link>
-            </div>
+       <div style={{ width: "18rem" }} className="main-inner col-sm-3" key={item.id}>
+       <Link target={"_blank"} to={`/products/${item.id}`}>
+         <img className="product-item-image" src={"http://127.0.0.1:8000/upload/" + item.image} alt="image" />
+         <h4>{item.title}</h4>
+         <span className="product-price">${item.price}</span>
+         <p className="product-description-collection">{item.description.slice(0, 50)}…</p>
+       </Link>
+       <Link to={`/update/${item.id}`}> <span className="btn btn-primary">Update</span></Link>
+       <Link to={`/delete/${item.id}`}> <span className="btn btn-danger">Delete</span></Link>
+       </div>
           ))}
         </div>
       </div>
